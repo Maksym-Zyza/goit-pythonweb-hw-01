@@ -1,22 +1,5 @@
 from abc import ABC, abstractmethod
-from pathlib import Path
-import logging
-
-# Cтворюємо логер, рівень INFO
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[logging.StreamHandler()],
-)
-
-logger = logging.getLogger(__name__)
-
-# Створюємо файловий handler для логера, рівень ERROR:
-filename = Path(__file__).stem
-fh = logging.FileHandler(f"{filename}.log")
-fh.setLevel(logging.ERROR)
-fh.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
-logger.addHandler(fh)
+from logger import logger
 
 
 # Створюємо абстрактний базовий клас Vehicle

@@ -1,14 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List
-import logging
-
-# Cтворюємо логер, рівень INFO
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[logging.StreamHandler()],
-)
-logger = logging.getLogger(__name__)
+from logger import logger
 
 
 # Виконується принцип єдиної відповідальності (SRP), клас Book відповідає за зберігання інформації про книгу
